@@ -100,8 +100,22 @@ const Hero = () => {
             ref={containerRef}
             className="relative min-h-[100vh] flex items-center justify-center pt-20 overflow-hidden bg-bg-primary transition-colors duration-500"
         >
+            {/* Background Video */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
+                >
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-globe-rotating-on-itself-4251-large.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-primary/80 to-bg-primary transition-colors duration-500"></div>
+            </div>
+
             {/* Particle Background */}
-            <div className="absolute inset-0 z-0 opacity-80">
+            <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
                 <Particles id="tsparticles" init={particlesInit} options={particlesConfig} className="w-full h-full" />
             </div>
 

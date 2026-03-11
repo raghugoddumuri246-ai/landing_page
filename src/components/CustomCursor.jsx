@@ -64,7 +64,7 @@ const CustomCursor = () => {
                 className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] hidden md:block"
                 variants={variants}
                 animate={isHovering ? 'hover' : 'default'}
-                transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.5 }}
+                transition={{ type: 'spring', stiffness: 1000, damping: 30, mass: 0.1 }}
             />
             <motion.div
                 className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-[10000] hidden md:block mix-blend-difference"
@@ -72,7 +72,7 @@ const CustomCursor = () => {
                     x: mousePosition.x - 4,
                     y: mousePosition.y - 4,
                 }}
-                transition={{ type: 'spring', stiffness: 1000, damping: 28, mass: 0.1 }}
+                transition={{ type: 'spring', stiffness: 2000, damping: 20, mass: 0.05 }}
             />
         </>
     );

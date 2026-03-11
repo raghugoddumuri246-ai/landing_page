@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
                     {reasons.map((item, idx) => (
                         <motion.div
                             key={idx}
@@ -72,17 +72,24 @@ const WhyChooseUs = () => {
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{ once: false, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className="glass p-8 md:p-10 rounded-3xl hover:bg-glass-bg transition-all duration-300 group overflow-hidden relative interactive border border-border-color hover:border-primary/40 shadow-sm flex flex-col"
+                            className="bg-bg-secondary/40 backdrop-blur-sm p-8 rounded-[2rem] group overflow-hidden relative border border-border-color hover:border-primary/50 hover:bg-bg-secondary/80 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
                         >
+                            {/* Large Background Icon */}
+                            <div className="absolute -bottom-8 -right-8 opacity-[0.04] group-hover:opacity-[0.1] transition-opacity duration-500 pointer-events-none transform group-hover:scale-110 group-hover:-rotate-12 text-primary">
+                                <item.icon size={180} strokeWidth={1} />
+                            </div>
+                            
                             <div className="relative z-10 flex flex-col h-full">
-                                <div className="w-14 h-14 bg-bg-secondary border border-border-color rounded-2xl flex items-center justify-center mb-6 text-primary shadow-inner group-hover:text-white group-hover:bg-primary transition-all duration-300 transform group-hover:scale-105">
-                                    <item.icon size={28} strokeWidth={1.5} />
+                                <div className="flex flex-col gap-5 mb-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                                        <item.icon size={26} strokeWidth={2} />
+                                    </div>
+                                    <h3 className="text-xl md:text-2xl font-bold text-text-primary group-hover:text-primary transition-colors leading-tight">
+                                        {item.title}
+                                    </h3>
                                 </div>
 
-                                <h3 className="text-xl md:text-2xl font-black text-text-primary mb-3 group-hover:text-primary transition-colors leading-tight">
-                                    {item.title}
-                                </h3>
-                                <p className="text-text-secondary text-base font-light leading-relaxed mt-auto relative z-10">
+                                <p className="text-text-secondary text-base font-normal leading-relaxed mt-auto relative z-10 group-hover:text-text-primary transition-colors duration-300">
                                     {item.desc}
                                 </p>
                             </div>
